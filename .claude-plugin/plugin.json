@@ -1,0 +1,5 @@
+{
+  "name": "research-mode",
+  "description": "Anti-hallucination research mode for Claude Code. Toggle on/off to enforce citation requirements, source grounding, and 'I don't know' behavior.",
+  "version": "1.0.0"
+}
