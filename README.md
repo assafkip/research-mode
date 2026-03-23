@@ -4,10 +4,14 @@ Anti-hallucination toggle for Claude Code. Activates three constraints from [Ant
 
 ## Install
 
+**As a plugin (recommended):**
 ```
 /plugin marketplace add assafkip/research-mode
 /plugin install research-mode@assafkip-research-mode
 ```
+
+**As a skill:**
+Clone the repo into your `.claude/skills/` directory or add it via the Claude Code skills UI.
 
 ## Use
 
