@@ -6,7 +6,7 @@ Anti-hallucination toggle for Claude Code. Activates three constraints from [Ant
 
 ```
 /plugin marketplace add assafkip/research-mode
-/plugin install research-mode@assafkipnis-research-mode
+/plugin install research-mode@assafkip-research-mode
 ```
 
 ## Use
@@ -40,3 +40,9 @@ Three constraints activate simultaneously:
 ## Why
 
 LLMs hallucinate. When you're doing research that matters, you need guardrails that force citation discipline. This plugin packages Anthropic's own recommendations into a one-command toggle.
+
+## Built by
+
+I built this while running GTM, investor outreach, and content ops for [KTLYST](https://ktlystlabs.com) entirely through Claude Code. When your AI assistant is writing your pitch decks, researching competitors, and drafting investor briefs, hallucinated facts aren't a minor annoyance. They're a credibility risk. This toggle exists because I needed it.
+
+I also consult with founders on AI-native operations, from Claude Code workflows to agent pipelines. If you're running your startup through AI and want to talk about what's working, reach out at assaf@ktlystlabs.com.
