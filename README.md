@@ -4,14 +4,22 @@ Anti-hallucination toggle for Claude Code. Activates three constraints from [Ant
 
 ## Install
 
-**As a plugin (recommended):**
+Works in Claude Code CLI, the macOS desktop app, and the VS Code extension. Open Claude Code and run these two commands:
+
+**Step 1 -- Add the marketplace:**
 ```
 /plugin marketplace add assafkip/research-mode
+```
+
+**Step 2 -- Install the plugin:**
+```
 /plugin install research-mode@assafkip-research-mode
 ```
 
-**As a skill:**
-Clone the repo into your `.claude/skills/` directory or add it via the Claude Code skills UI.
+That's it. To confirm it installed, run `/plugin` and check that `research-mode` appears in your list.
+
+**Alternative -- install as a standalone skill:**
+If you prefer not to use the plugin system, clone this repo and copy the `SKILL.md` file into your project's `.claude/skills/research-mode/` directory.
 
 ## Use
 
@@ -31,9 +39,9 @@ Say "exit research mode" to turn it off.
 
 Three constraints activate simultaneously:
 
-1. **Say "I don't know"** - no guessing, no inferring. If there's no credible source, Claude says so.
-2. **Cite everything** - every claim must reference a file, URL, paper, or named source. Unsourced claims get retracted.
-3. **Quote first, then analyze** - responses are grounded in word-for-word quotes from source material, not paraphrased summaries.
+1. **Say "I don't know"** -- no guessing, no inferring. If there's no credible source, Claude says so.
+2. **Cite everything** -- every claim must reference a file, URL, paper, or named source. Unsourced claims get retracted.
+3. **Quote first, then analyze** -- responses are grounded in word-for-word quotes from source material, not paraphrased summaries.
 
 ## What it doesn't do
 
@@ -45,8 +53,16 @@ Three constraints activate simultaneously:
 
 LLMs hallucinate. When you're doing research that matters, you need guardrails that force citation discipline. This plugin packages Anthropic's own recommendations into a one-command toggle.
 
+## Troubleshooting
+
+**"Plugin not found" after Step 1:** Make sure you typed the marketplace command exactly as shown. The marketplace name is `assafkip/research-mode` (GitHub username/repo).
+
+**Command doesn't appear after install:** Run `/reload-plugins` to refresh, or restart Claude Code.
+
+**Want to scope it to one project only:** Add `--scope project` to the install command in Step 2.
+
 ## Built by
 
-I built this while running GTM, investor outreach, and content ops for [KTLYST](https://ktlystlabs.com) entirely through Claude Code. When your AI assistant is writing your pitch decks, researching competitors, and drafting investor briefs, hallucinated facts aren't a minor annoyance. They're a credibility risk. This toggle exists because I needed it.
+[Assaf Kipnis](https://github.com/assafkip) -- built while running GTM, investor outreach, and content ops for [KTLYST](https://ktlystlabs.com) entirely through Claude Code. When your AI assistant is writing your pitch decks, researching competitors, and drafting investor briefs, hallucinated facts aren't a minor annoyance. They're a credibility risk. This toggle exists because I needed it.
 
-I also consult with founders on AI-native operations, from Claude Code workflows to agent pipelines. If you're running your startup through AI and want to talk about what's working, reach out at assaf@ktlystlabs.com.
+Questions or feedback: assaf@ktlystlabs.com
