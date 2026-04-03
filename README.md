@@ -1,6 +1,8 @@
 # Research Mode for Claude Code
 
-Anti-hallucination toggle for Claude Code. Activates three constraints from [Anthropic's documentation](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations) that force Claude to cite sources, say "I don't know" when unsure, and ground responses in direct quotes.
+Anti-hallucination toggle for Claude Code. Activates citation constraints from [Anthropic's documentation](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations) that force Claude to cite sources, say "I don't know" when unsure, and ground responses in direct quotes.
+
+> **Using [Kipi Founder OS](https://github.com/assafkip/kipi-system)?** Research mode is already built into kipi-core. Just run `/q-research <topic>`. No extra install needed.
 
 ## Install
 
@@ -42,6 +44,17 @@ Three constraints activate simultaneously:
 1. **Say "I don't know"** -- no guessing, no inferring. If there's no credible source, Claude says so.
 2. **Cite everything** -- every claim must reference a file, URL, paper, or named source. Unsourced claims get retracted.
 3. **Quote first, then analyze** -- responses are grounded in word-for-word quotes from source material, not paraphrased summaries.
+
+## Source cascade (keeps token costs low)
+
+Sources are checked in order. Claude stops at the first level that answers the question:
+
+1. **Local files** (Grep + Read) -- zero cost, most reliable
+2. **WebSearch snippets** -- cite the snippet directly, skip downloading full pages
+3. **WebFetch** -- only when the snippet is ambiguous or user needs full quotes
+4. **Scholar Gateway** -- for academic papers, if available
+
+Token budget: 5 WebSearch, 3 WebFetch max per question. If the limit is hit, Claude summarizes what it found and asks before going deeper.
 
 ## What it doesn't do
 
